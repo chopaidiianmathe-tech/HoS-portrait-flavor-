@@ -1,0 +1,464 @@
+SLEEP_FILE: Blanket,
+SPRITE_EXTRA_FILE: Normal,
+NAMESET_FILE_NOBLE: StdLastNoble,
+
+WORLD: {
+	TOWN: BattyT,
+	TOWN_COLOR: 255_255_255,
+	VILLAGE: BattyV,
+	VILLAGE_COLOR: 255_255_255,
+	OVERLAY: BattyR,
+	OVERLAY_COLOR: 255_255_255,
+	WALL: Flaggerwall,
+	WALL_COLOR: 255_255_255,
+	WALL_VILLAGE: Flaggerwall_Village,
+	WALL_VILLAGE_COLOR: 255_255_255,
+	TERRAIN: Batty,
+	TERRAIN_COLOR: 140_110_100,
+	FARM: Farm,
+	FARM_COLOR: [
+		194_218_194,
+		180_180_180,
+		210_234_210,
+		202_222_202,
+		184_204_184,
+		196_216_196,
+		190_206_190,
+		202_220_202,
+		194_214_194,
+		192_216_192,
+		220_240_220,
+		194_206_194,
+		192_192_192,
+		196_204_196,
+		222_246_222,
+		208_232_208,
+	],
+},
+
+CROWN: {
+	FILE: Kat_Batstyle,
+	OFFX: 0,
+	OFFY: 6,
+},
+MERC: {
+	FILE: BHelm,
+	OFFX: 0,
+	OFFY: 11,
+},
+RAIDER: [{
+	FILE: BHelm,
+	OFFX: 0,
+	OFFY: 9,
+	},
+],
+
+COLOR_CLOTHES: [
+	{R: 94, G: 68, B: 39,},
+	{R: 59, G: 46, B: 32,},
+	{R: 46, G: 42, B: 37,},
+	{R: 48, G: 53, B: 77,},
+	{R: 77, G: 112, B: 59,},
+	{R: 112, G: 89, B: 59,},
+	{R: 84, G: 83, B: 82,},
+	{R: 48, G: 48, B: 42,},
+        {R: 186, G: 9, B: 9,},
+],
+
+COLOR_BLOOD: {R: 255, G: 30, B: 30,},
+
+COLORS: {
+    SKIN: {
+        TURNS_WHITE_WHEN_DEAD: true,
+        VALUES:[
+			{R: 60, G: 60, B: 60,},
+			{R: 50, G: 50, B: 50,},
+			{R: 40, G: 40, B: 40,},
+			{R: 70, G: 70, B: 70,},
+			{R: 80, G: 80, B: 80,},
+        ],            
+    },
+	SKIN_FACE: {
+		VALUES:[
+			{R: 200, G: 200, B: 200,},
+			{R: 180, G: 180, B: 180,},
+			{R: 210, G: 210, B: 210,},
+			{R: 230, G: 230, B: 230,},
+        ],        
+	},
+	ARMOUR: {
+		PICK_BY_STAT: EQUIP_BATTLE_ARMOUR_PLATE,
+		VALUES: [
+			60_49_47,
+			74_44_37,
+			97_91_90,
+			164_0_0,
+		],
+	},
+},
+CHILD: {
+    INFANT_FILE: Batbaby,
+
+    COLOR_SKIN: SKIN,
+    COLOR_LEG: SKIN,
+
+    SPRITE_FILE: Aly_Flaggermus,
+    SPRITE_SKELLETON_FILE: Humanoid_small,
+    NAMESET_FILE_FIRST: StdFirst,
+    NAMESET_FILE_SURNAME: StdLast,
+
+    ADDONS: [
+        {
+            BELOW_HEAD: false,
+            SPRITE_FILE: HairHuman,
+            ADDON_INDEX: 3,
+            COLOR: SKIN,
+        },
+    ],
+
+    FACE: [
+        {
+            CONDITIONS: {
+            },
+            FRAMES: [
+                Kat_Bat_Baby: 0,
+            ],
+            OFF_Y: 0,
+            OFF_X: 0,
+            STAINS: true,
+        },
+        {
+            CONDITIONS: {
+                EQUAL: {
+                    TYPE_CHILD_SLAVE: 1,
+                },
+            },
+            FRAMES: [
+                Kat_Bat_Baby: 5,
+            ],
+            OFF_Y: 0,
+            OFF_X: 0,
+            STAINS: true,
+        },
+    ],
+},
+
+
+TYPES: [
+    {
+        OCCURRENCE: 0.5,
+        OCCURRENCE_EXTRA1: 0.5,
+        OCCURRENCE_EXTRA2: 0.5,
+        COLOR_SKIN: SKIN,
+        COLOR_LEG: SKIN,
+        COLOR_EXTRA1: SKIN,
+        COLOR_EXTRA2: SKIN,
+
+        SPRITE_FILE: Aly_Flaggermus,
+        SPRITE_SKELLETON_FILE: Vargen,
+        NAMESET_FILE_FIRST: BatFFirst,
+        NAMESET_FILE_SURNAME: BatFLast,
+        NAMESET_FILE_FIRST_NOBLE: BatFFirst,
+        NAMESET_FILE_SURNAME_NOBLE: BatFLast,
+        PORTRAIT_FILE: Aly_Flaggermus,
+
+        ADDONS: [
+            {
+                BELOW_HEAD: false,
+                SPRITE_FILE: NobilityCloakMedium,
+                ADDON_INDEX: 2,
+                CONDITIONS: {
+                    EQUAL: {
+                        POPULATION_NOBLES_I: 1,
+                    },
+                },
+            },
+            {
+                BELOW_HEAD: false,
+                ADDON_INDEX: 1,
+                CONDITIONS: {
+                    GREATER: {
+                        EQUIP_BATTLE_ARMOUR_PLATE_I: 0,
+                    },
+                },
+                COLOR: ARMOUR,
+            },
+            {
+                BELOW_HEAD: true,
+                ADDON_INDEX: 0,
+                CONDITIONS: {
+                    GREATER: {
+                        EQUIP_BATTLE_ARMOUR_LEATHER_I: 0,
+                    },
+                },
+                COLOR: ARMOUR,
+            },
+        ],
+
+        FACE: [
+            {
+                CONDITIONS: {
+                    EQUAL: {
+                        TYPE_PARENT: 1,
+                    },
+                },
+                FRAMES: [
+                    Kat_Bat_Baby: 0,
+                ],
+                OFF_Y: 2,
+                OFF_X: 12,
+                STAINS: true,
+            },
+            {
+                CONDITIONS: {
+                    EQUAL: {
+                        TYPE_PARENT_SLAVE: 1,
+                    },
+                },
+                FRAMES: [
+                    Baby: 0,
+                ],
+                OFF_Y: 2,
+                OFF_X: 12,
+                STAINS: true,
+            },
+            {
+                FRAMES: [
+                    Aly_Bat_Body: 0,
+                    Aly_Bat_Body: 1,
+                    Aly_Bat_Body: 2,
+                    Aly_Bat_Body: 3,
+                    Aly_Bat_Body: 4,
+                    Aly_Bat_Body: 5,
+                    Aly_Bat_Body: 6,
+                    Aly_Bat_Body: 7,
+                ],
+                COLOR: SKIN_FACE,
+            },
+            {
+                FRAMES: [
+                    Aly_Bat_Face: 0,
+                    Aly_Bat_Face: 1,
+                    Aly_Bat_Face: 2,
+                    Aly_Bat_Face: 3,
+                ],
+                COLOR: SKIN_FACE,
+            },
+            {
+                FRAMES: [
+                    Aly_Bat_Eyes: 0,
+                    Aly_Bat_Eyes: 1,
+                    Aly_Bat_Eyes: 2,
+                    Aly_Bat_Eyes: 3,
+                    Kat_Bat_Eyesp: 0,
+                    Kat_Bat_Eyesp: 1,
+                    Kat_Bat_Eyesp: 2,
+                    Kat_Bat_Eyesp: 3,
+                ],
+            },
+            {
+                FRAMES: [
+                    Aly_Bat_Hair: 0,
+                    Aly_Bat_Hair: 1,
+                    Aly_Bat_Hair: 2,
+                    Aly_Bat_Hair: 3,
+                    Aly_Bat_Hair: 4,
+                    Aly_Bat_Hair: 5,
+                    Aly_Bat_Hair: 6,
+                    Aly_Bat_Hair: 7,
+                    Aly_Bat_Hair: 8,
+                    Aly_Bat_Hair: 9,
+                    Aly_Bat_Hair: 10,
+                    Aly_Bat_Hair: 11,
+                ],
+                COLOR: SKIN_FACE,
+            },
+            {
+                FRAMES: [
+                    Aly_Bat_Ears: 0,
+                    Aly_Bat_Ears: 1,
+                    Aly_Bat_Ears: 2,
+                    Aly_Bat_Ears: 3,
+                ],
+                COLOR: SKIN_FACE,
+            },
+            {
+                FRAMES: [
+                    Aly_Bat_Teeth: 0,
+                    Aly_Bat_Teeth: 1,
+                    Aly_Bat_Teeth: 2,
+                    Aly_Bat_Teeth: 3,
+                ],
+            },
+            {
+                CONDITIONS: {
+                    EQUAL: {
+                        CLASS_NOBLE: 1,
+                    },
+                },
+                FRAMES: [
+                    Cloak: 4,
+                ],
+                OFF_Y: 2,
+                STAINS: false,
+            },
+             {
+                CONDITIONS: {
+                    EQUAL: {
+                            TYPE_HERO: 1,
+                    },
+                },
+                FRAMES: [
+                    Heroh: 4,
+                    Heroh: 5,
+                ],
+                OFF_Y: 2,
+                STAINS: false,
+            },
+
+        ],
+    },
+
+    {
+        OCCURRENCE: 0.5,
+        OCCURRENCE_EXTRA1: 0.5,
+        OCCURRENCE_EXTRA2: 0.5,
+        COLOR_SKIN: SKIN,
+        COLOR_LEG: SKIN,
+        COLOR_EXTRA1: SKIN,
+        COLOR_EXTRA2: SKIN,
+
+        SPRITE_FILE: Aly_Flaggermus,
+        SPRITE_SKELLETON_FILE: Vargen,
+        NAMESET_FILE_FIRST: FemBatFFirst,
+        NAMESET_FILE_SURNAME: BatFLast,
+        NAMESET_FILE_FIRST_NOBLE: FemBatFFirst,
+        NAMESET_FILE_SURNAME_NOBLE: BatFLast,
+        PORTRAIT_FILE: Aly_Flaggermus,
+
+        ADDONS: [
+            {
+                BELOW_HEAD: false,
+                SPRITE_FILE: NobilityCloakMedium,
+                ADDON_INDEX: 2,
+                CONDITIONS: {
+                    EQUAL: {
+                        POPULATION_NOBLES_I: 1,
+                    },
+                },
+            },
+            {
+                BELOW_HEAD: false,
+                ADDON_INDEX: 1,
+                CONDITIONS: {
+                    GREATER: {
+                        EQUIP_BATTLE_ARMOUR_PLATE_I: 0,
+                    },
+                },
+                COLOR: ARMOUR,
+            },
+            {
+                BELOW_HEAD: true,
+                ADDON_INDEX: 0,
+                CONDITIONS: {
+                    GREATER: {
+                        EQUIP_BATTLE_ARMOUR_LEATHER_I: 0,
+                    },
+                },
+                COLOR: ARMOUR,
+            },
+        ],
+
+        FACE: [
+            {
+                FRAMES: [
+                    Kat_Bat_BodyF: 0,
+                    Kat_Bat_BodyF: 1,
+                    Kat_Bat_BodyF: 2,
+                    Kat_Bat_BodyF: 3,
+                    Kat_Bat_BodyF: 4,
+                    Kat_Bat_BodyF: 5,
+                    Kat_Bat_BodyF: 6,
+                    Kat_Bat_BodyF: 7,
+                ],
+                COLOR: SKIN_FACE,
+            },
+            {
+                FRAMES: [
+                    Kat_Bat_FaceF: 0,
+                    Kat_Bat_FaceF: 1,
+                    Kat_Bat_FaceF: 2,
+                    Kat_Bat_FaceF: 3,
+                ],
+                COLOR: SKIN_FACE,
+            },
+            {
+                FRAMES: [
+                    Aly_Bat_Eyes: 0,
+                    Aly_Bat_Eyes: 1,
+                    Aly_Bat_Eyes: 2,
+                    Aly_Bat_Eyes: 3,
+                ],
+            },
+            {
+                FRAMES: [
+                    Kat_Bat_HairF: 0,
+                    Kat_Bat_HairF: 1,
+                    Kat_Bat_HairF: 2,
+                    Kat_Bat_HairF: 3,
+                    Kat_Bat_HairF: 4,
+                    Kat_Bat_HairF: 5,
+                    Kat_Bat_HairF: 6,
+                    Kat_Bat_HairF: 7,
+                    Kat_Bat_HairF: 8,
+                    Kat_Bat_HairF: 9,
+                    Kat_Bat_HairF: 10,
+                    Kat_Bat_HairF: 11,
+                ],
+                COLOR: SKIN_FACE,
+            },
+            {
+                FRAMES: [
+                    Aly_Bat_Ears: 0,
+                    Aly_Bat_Ears: 1,
+                    Aly_Bat_Ears: 2,
+                    Aly_Bat_Ears: 3,
+                ],
+                COLOR: SKIN_FACE,
+            },
+            {
+                FRAMES: [
+                    Aly_Bat_Teeth: 0,
+                    Aly_Bat_Teeth: 1,
+                    Aly_Bat_Teeth: 2,
+                    Aly_Bat_Teeth: 3,
+                ],
+            },
+            {
+                CONDITIONS: {
+                    EQUAL: {
+                        CLASS_NOBLE: 1,
+                    },
+                },
+                FRAMES: [
+                    Cloak: 4,
+                ],
+                OFF_Y: 2,
+                STAINS: false,
+            },
+                        {
+                CONDITIONS: {
+                    EQUAL: {
+                            TYPE_HERO: 1,
+                    },
+                },
+                FRAMES: [
+                    Heroh: 4,
+                    Heroh: 5,
+                ],
+                OFF_Y: 2,
+                STAINS: false,
+            },
+        ],
+    },
+],
